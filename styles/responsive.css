@@ -93,14 +93,7 @@
   }
 
   .language-switcher {
-    margin-left: auto;
-    margin-right: 0.25rem;
-    z-index: 1001;
-  }
-
-  .language-switcher button {
-    padding: 0.4rem 0.65rem;
-    font-size: var(--font-size-sm);
+    display: none;
   }
 
   .nav-menu {
@@ -128,11 +121,12 @@
   }
 
   .hamburger {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     width: 44px;
     height: 44px;
+    margin-left: auto;
     flex-shrink: 0;
     position: relative;
     z-index: 1002;
@@ -312,10 +306,6 @@
     font-size: var(--font-size-lg);
   }
 
-  .language-switcher button {
-    padding: 0.35rem 0.5rem;
-    gap: 0.35rem;
-  }
 
   /* Hero Section */
   .hero-avatar {
