@@ -50,6 +50,21 @@ src/
 3. Generar build:
    `npm run build`
 
+## Deploy en Netlify
+
+El proyecto ya queda listo para desplegarse en Netlify con la configuracion incluida en `netlify.toml`.
+
+1. Entrar a Netlify.
+2. Elegir `Add new site` -> `Import an existing project`.
+3. Conectar GitHub y seleccionar el repo `Aplicacion-de-Clima`.
+4. Confirmar estos valores:
+  `Build command`: `npm run build`
+  `Publish directory`: `dist`
+  `Node version`: `20`
+5. Desplegar.
+
+Si Netlify detecta `netlify.toml`, esos valores se aplican automaticamente.
+
 ## Decisiones tecnicas
 
 - Se uso Open-Meteo para evitar exponer claves privadas en frontend.
