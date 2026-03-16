@@ -5,13 +5,22 @@
   "main": "index.html",
   "scripts": {
     "start": "live-server --port=3000 --open=/index.html",
+    "dev": "npm run test:all && live-server --port=3000 --open=/index.html",
     "build": "npm run minify-css && npm run minify-js",
     "minify-css": "cleancss -o dist/styles/main.min.css styles/main.css styles/components.css styles/responsive.css",
     "minify-js": "uglifyjs js/main.js js/form-validation.js js/animations.js -o dist/js/main.min.js",
     "optimize-images": "imagemin assets/images/* --out-dir=dist/assets/images",
     "lighthouse": "lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html",
     "validate-html": "html-validate index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:lint": "echo \"🔍 Verificando errores de linting...\" && html-validate index.html && echo \"✅ Linting OK\"",
+    "test:js": "echo \"🔍 Verificando JavaScript...\" && node -c js/main.js && node -c js/form-validation.js && node -c js/animations.js && node -c js/translations.js && echo \"✅ JavaScript OK\"",
+    "test:links": "echo \"🔍 Verificando enlaces...\" && node scripts/check-links.js",
+    "test:performance": "echo \"🔍 Verificando rendimiento...\" && npm run lighthouse",
+    "test:all": "npm run test:lint && npm run test:js && npm run test:links",
+    "watch": "powershell -ExecutionPolicy Bypass -File scripts/watch.ps1",
+    "watch:simple": "npm run test:all && echo \"👀 Modo watch activado - Ejecutando tests cada 5 segundos...\" && setInterval(() => { npm run test:all }, 5000)",
+    "deploy:check": "npm run test:all && npm run build && echo \"✅ Listo para deploy\"",
+    "test": "npm run test:all"
   },
   "keywords": [
     "portfolio",

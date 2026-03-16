@@ -1,0 +1,33 @@
+{
+  "name": "portfolio-antonella-rivas-react",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Landing page de Antonella Rivas - Desarrolladora Frontend Junior (Versión React)",
+  "main": "src/main.jsx",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "test": "vitest"
+  },
+  "keywords": [
+    "portfolio",
+    "frontend",
+    "developer",
+    "react",
+    "vite"
+  ],
+  "author": "Antonella Rivas",
+  "license": "MIT",
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.1.0"
+  }
+}
